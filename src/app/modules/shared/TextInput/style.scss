@@ -1,0 +1,46 @@
+@import "../../../style.main";
+
+.input-form {
+  position: relative;
+  padding: 5px 5px 15px 5px;
+  min-width: 25vw;
+
+  input {
+    font-family: $mainFontFamily;
+    border: 1px solid $borderColor;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-decoration: none;
+    outline: none;
+  }
+
+  label {
+    font-family: $mainFontFamily;
+    font-size: 1.125em;
+    margin: 5px 0;
+  }
+
+  .form-control {
+  }
+
+  .control-error {
+    border: 1px solid red;
+  }
+
+  .control-focus {
+    border: 1px solid darkseagreen;
+  }
+
+  .control-none {
+    border: none;
+  }
+
+  .message-error {
+    position: absolute;
+    bottom: -7px;
+    span {
+      color: red;
+    }
+  }
+}

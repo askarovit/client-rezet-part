@@ -1,0 +1,28 @@
+@import "../../../../style.main";
+
+.cart-container {
+
+  display: flex;
+  justify-content: left;
+  min-height: 20vh;
+  background-color: $mainPalette;
+  font-family: $mainFontFamily;
+
+  padding: 15px;
+  margin-bottom: 2px;
+
+
+  word-wrap: break-word;
+  overflow: hidden;
+
+  .part-1 {
+    width: 20%;
+  }
+  .part-2 {
+    width: 50%;
+  }
+  .part-3 {
+    width: 30%;
+    border-left: 1px solid $borderColor;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../../style.main";
+
+.select-form {
+  padding: 5px 5px 15px 5px;
+
+  span {
+    font-family: $mainFontFamily;
+    font-size: 1.1em;
+    margin: 5px 0;
+  }
+
+  select {
+    font-family: $mainFontFamily;
+    border: 2px solid $borderColor;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    background-color: $borderColor;
+  }
+
+  select:hover {
+    background-color: $mainPalette;
+    border: 2px solid $borderColor;
+
+  }
+}

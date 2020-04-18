@@ -1,0 +1,9 @@
+.cart-description-container {
+  display: inline-flex;
+  flex-direction: column;
+
+  span {
+    margin-top: 15px;
+    font-weight: bold;
+  }
+}

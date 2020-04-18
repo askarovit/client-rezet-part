@@ -1,0 +1,17 @@
+.cart-image-container {
+  display: inline-flex;
+  align-items: center;
+
+  img {
+    box-shadow: 2px 2px 6px 1px rgba(190, 190, 190, .3);
+    border-radius: 15px;
+    border: 1px solid rgba(190, 190, 190, .2);
+    padding: 10px;
+    margin: 15px;
+
+    width: 65%;
+    height: 65%;
+    max-width: 125px;
+    max-height: 125px;
+  }
+}

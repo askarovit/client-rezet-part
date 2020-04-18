@@ -1,0 +1,38 @@
+@import "../../style.main";
+
+
+.pay-form-container {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .submit-form {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    button {
+      min-width: 150px;
+      background-color: $borderColor;
+      padding: 10px 20px;
+      font-family: $mainFontFamily;
+      font-size: 1.125em;
+      border-radius: 10px;
+      border: 2px solid $borderColor;
+      cursor: pointer;
+      outline: none;
+    }
+
+    button:hover {
+      background-color: $mainPalette;
+      border: 2px solid $borderColor;
+    }
+  }
+
+}
