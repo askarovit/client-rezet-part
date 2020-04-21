@@ -1,5 +1,10 @@
-import { cartsMock } from '../mock/carts'
-import { GET_CARTS, CHOOSE_CARTS } from '../types/carts';
+// import { cartsMock } from '../mock/carts'
+import {
+  GET_CARTS,
+  CHOOSE_CARTS,
+  GET_CARTS_FAILED,
+  GET_CARTS_SUCCEEDED
+} from '../types/carts';
 
 const initialState = {
   carts: [],
@@ -9,10 +14,16 @@ const initialState = {
   }
 };
 
-export default (state = initialState, { type, payload }) => {
+export default (state = initialState, { type, payload = [] }) => {
   switch (type) {
       case GET_CARTS:
-        return {...state, carts: cartsMock};
+        return {...state, carts: payload || []};
+
+      case GET_CARTS_SUCCEEDED:
+        return {...state };
+
+      case GET_CARTS_FAILED:
+        return {...state, carts: []};
 
       case CHOOSE_CARTS:
         const { order: { carts }, order: { totalAmount } } = state;

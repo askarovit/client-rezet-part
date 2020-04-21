@@ -12,7 +12,10 @@ export const Select = props => {
     return (
         <div className="select-form ">
             <span>{ props.label }</span>
-            <select className={formControl} value={props.value} onChange={props.onChange} name={props.name}>
+            <select className={formControl}
+                    value={props.value}
+                    onChange={props.onChange}
+                    name={props.name}>
                 {
                     props.options.map(option => (
                     <option value={option.value} key={option.value.toString()}>

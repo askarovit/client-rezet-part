@@ -1,7 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { CartItemComponent } from '../CartItem';
 import { getCarts, chooseCarts } from '../../../../../core/actions/carts';
 import './style.scss';
@@ -13,7 +12,7 @@ import './style.scss';
      } = useSelector(state => state);
 
      useEffect(() => {
-         dispatch(getCarts({}));
+       dispatch(getCarts());
      }, [dispatch]);
 
      const handleChangePrice = (cartId, value, amount) => {
@@ -23,16 +22,16 @@ import './style.scss';
      return (
         <>
             {
-                carts.map(cart=> (
+              carts.length > 0 && carts.map(cart=> (
                     <Fragment key={cart.id}>
                         <CartItemComponent
                             { ...cart }
                             isDesktop={ props.isDesktop }
                             icons={{
-                                trash: 'https://localhost:433/svg/trash.svg',
-                                minus: 'https://localhost:433/svg/minus.svg',
-                                plus: 'https://localhost:433/svg/plus.svg',
-                                currency: 'https://localhost:433/svg/euro.svg'
+                                trash: 'https://localhost:9871/svg/trash.svg',
+                                minus: 'https://localhost:9871/svg/minus.svg',
+                                plus: 'https://localhost:9871/svg/plus.svg',
+                                currency: 'https://localhost:9871/svg/euro.svg'
                             }}
                             i
                             onChangeTotalPrice={handleChangePrice}
@@ -43,7 +42,7 @@ import './style.scss';
             <div className='totalCalculate'>
                 <div>
                     <span>{ totalAmount }</span>
-                    <img src='https://localhost:433/svg/euro.svg' width='24' height='24' alt='currency'/>
+                    <img src='https://localhost:9871/svg/euro.svg' width='24' height='24' alt='currency'/>
                 </div>
                 <div>
                     <Link to={'/shipping'}>

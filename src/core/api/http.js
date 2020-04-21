@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const SERVER = 'https://localhost:433/api/';
+const SERVER = 'https://localhost:9871/api/';
 // const STATIC = 'http://localhost:8000/static/';
 
 export function httpRequest(options, params) {
@@ -19,5 +19,5 @@ export function httpRequest(options, params) {
     method: options.method,
     url: SERVER + options.url,
     [dataParam]: options.data
-  })
+  }).then(({ data }) =>  data);
 }

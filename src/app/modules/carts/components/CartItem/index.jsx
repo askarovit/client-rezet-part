@@ -41,7 +41,7 @@ export const CartItemComponent = (props) => {
     return (
         <div className={classes.cartContainer}>
             <div className={classes.part_image}>
-                <CartImageComponent icon='https://localhost:433/svg/product.svg' />
+                <CartImageComponent icon='https://localhost:9871/svg/product.svg' />
             </div>
             <div className={classes.part_description}>
                 <CartDescriptionComponent>

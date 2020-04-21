@@ -27,11 +27,20 @@
       border: 2px solid $borderColor;
       cursor: pointer;
       outline: none;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     button:hover {
       background-color: $mainPalette;
       border: 2px solid $borderColor;
+    }
+
+    button:disabled {
+      color: grey;
     }
   }
 
