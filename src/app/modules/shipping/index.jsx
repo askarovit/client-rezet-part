@@ -11,6 +11,7 @@ const ShippingFormComponent = () => {
   const [ rules, setRules ] = useState({ ...rulesDefault(order.totalAmount)});
   const [ finalPrice, setFinalPrice ] = useState(order.totalAmount);
   const [ delivery, setDelivery ] = useState(0);
+  const [ isPayed, setAnotherStatusPayed ] = useState(false);
 
   const handlerPay = async () => {
     if (order.totalAmount <= 0) {
@@ -28,9 +29,8 @@ const ShippingFormComponent = () => {
       data: { userInfo: formData, order }
     });
 
-    if (!!data.finalPrice && data.finalPrice !== finalPrice) {
-        setFinalPrice(data.finalPrice);
-        setDelivery(0);
+    if (data.payment === 'payed') {
+        setAnotherStatusPayed(true)
     }
   };
 
@@ -115,10 +115,22 @@ const ShippingFormComponent = () => {
           valid={rules.formControls.shipping.valid}
         />
         <div className='submit-form'>
-          <button disabled={!rules.formIsValid} onClick={handlerPay}>
-            <span>PAY</span>
-            <span>&nbsp;{ finalPrice + delivery } &#8364;</span>
-          </button>
+          {
+            !isPayed &&
+            <button disabled={!rules.formIsValid} onClick={handlerPay}>
+              <span>PAY</span>
+              <span>&nbsp;{ finalPrice + delivery } &#8364;</span>
+            </button>
+          }
+          {
+            isPayed &&
+            <>
+              <span className='notification-green'>Transaction was successful</span>
+                <button onClick={()=> window.location.href = '/cart'}>
+                  <span>Go to carts</span>
+                </button>
+            </>
+          }
         </div>
       </div>
     </div>

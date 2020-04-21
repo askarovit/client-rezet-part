@@ -17,9 +17,9 @@ export const App = (props) => {
 
     return (
         <div className={classes.root}>
-          <Suspense fallback="Loading...">
+          <Suspense fallback="<Loading...">
               <Switch>
-                  <Route path="/cart">
+                  <Route path="/cart" exact>
                       <CartListComponent {...props} />
                   </Route>
                   <Route path="/shipping">
