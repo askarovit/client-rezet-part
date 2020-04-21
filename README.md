@@ -3,7 +3,7 @@
 ### Used:
 - React JS
 - React Redux
-- React Saga
+- Redux Saga
 - eslint
 
 
