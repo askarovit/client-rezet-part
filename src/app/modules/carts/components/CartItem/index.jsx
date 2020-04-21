@@ -46,7 +46,7 @@ export const CartItemComponent = (props) => {
             <div className={classes.part_description}>
                 <CartDescriptionComponent>
                     <>
-                        <span>{ title }</span>
+                        <span>{ title || <Skeleton count={1}/> }</span>
                         {  description || <Skeleton count={3}/> }
                     </>
                 </CartDescriptionComponent>

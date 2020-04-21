@@ -22,34 +22,37 @@ import './style.scss';
      return (
         <>
             {
-              carts.length > 0 && carts.map(cart=> (
+              carts.length > 0 && <> {
+                  carts.map(cart =>
                     <Fragment key={cart.id}>
-                        <CartItemComponent
-                            { ...cart }
-                            isDesktop={ props.isDesktop }
-                            icons={{
-                                trash: 'https://localhost:9871/svg/trash.svg',
-                                minus: 'https://localhost:9871/svg/minus.svg',
-                                plus: 'https://localhost:9871/svg/plus.svg',
-                                currency: 'https://localhost:9871/svg/euro.svg'
-                            }}
-                            i
-                            onChangeTotalPrice={handleChangePrice}
-                        />
+                      <CartItemComponent
+                        {...cart}
+                        isDesktop={props.isDesktop}
+                        icons={{
+                          trash: 'https://localhost:9871/svg/trash.svg',
+                          minus: 'https://localhost:9871/svg/minus.svg',
+                          plus: 'https://localhost:9871/svg/plus.svg',
+                          currency: 'https://localhost:9871/svg/euro.svg'
+                        }}
+                        i
+                        onChangeTotalPrice={handleChangePrice}
+                      />
                     </Fragment>
-                ))
-            }
-            <div className='totalCalculate'>
-                <div>
-                    <span>{ totalAmount }</span>
-                    <img src='https://localhost:9871/svg/euro.svg' width='24' height='24' alt='currency'/>
-                </div>
-                <div>
-                    <Link to={'/shipping'}>
+                  )
+                }
+                  <div className='totalCalculate'>
+                    <div>
+                      <span>{ totalAmount }</span>
+                      <img src='https://localhost:9871/svg/euro.svg' width='24' height='24' alt='currency'/>
+                    </div>
+                    <div>
+                      <Link to={'/shipping'}>
                         <button type='button'>BUY</button>
-                    </Link>
-                </div>
-            </div>
+                      </Link>
+                    </div>
+                  </div>
+                </>
+          }
         </>
   )
 };
